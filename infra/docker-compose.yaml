@@ -4,12 +4,14 @@ version: '3.8'
 
 services:
   db:
+    container_name: database
     image: postgres:13.0-alpine
     volumes:
       - postgresql-data:/var/lib/postgresql/data/
     env_file:
       - ./.env
   web:
+    container_name: web
     image: aleksandrsteklov/api_yamdb:latest
     restart: always
     volumes:
@@ -21,6 +23,7 @@ services:
       - ./.env
 
   nginx:
+    container_name: nginx
     image: nginx:1.21.3-alpine
     ports:
       - "80:80"
