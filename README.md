@@ -1,6 +1,5 @@
 # yamdb_final
-### Проект yamdb_final
-____
+
 
 ![This is an image](https://github.com/SteklovAl/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
@@ -17,28 +16,33 @@ Workflow состоит из четырёх шагов:
 ### Подготовка и запуск проекта
 
 Клонирование репозитория
-`git clone https://github.com/lindex/yamdb_final.git`
+`git clone https://github.com/SteklovAl/yamdb_final.git`
 
 ### Установка на удаленном сервере (Ubuntu):
 
 Шаг 1. Вход на удаленный сервер
 Подключаемся на удаленный сервер
+
 `ssh <username>@<ip_address>`
 
 Шаг 2. Установка docker:
+
 `sudo apt install docker.io`
 
 Шаг 3. Установка docker-compose:
+
 `sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
 `sudo chmod +x /usr/local/bin/docker-compose`
 
 Шаг 4. Копирование `docker-compose.yaml` и `nginx/default.conf`:
+
 Скопируйте подготовленные файлы `docker-compose.yaml` и `nginx/default.conf` из проекта на сервер в `home/<ваш_username>/docker-compose.yaml` и `home/<ваш_username>/nginx/default.conf соответственно`.
 
 `scp docker-compose.yaml <username>@<host>:/home/<username>/docker-compose.yaml`
 `scp -r nginx/ <username>@<host>:/home/<username>/`
 
 Шаг 5. Добавление Github Secrets:
+
 Для работы с Workflow добавьте в Secrets GitHub переменные окружения для работы:
 
 ```
