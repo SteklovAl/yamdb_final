@@ -55,10 +55,10 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull <имя-пользователя>/<имя-репозитория>
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 <имя-пользователя>/<имя-репозитория> 
+            sudo docker run --rm -d -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest 
   send_message:
     name: Telegramm message
     runs-on: ubuntu-latest
