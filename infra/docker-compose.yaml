@@ -17,8 +17,6 @@ services:
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
-      - .static/redoc.yaml:/var/html/redoc/redoc.yaml
-      - .templates/redoc.html:/var/html/redoc/redoc.html
     depends_on:
       - db
     env_file:
