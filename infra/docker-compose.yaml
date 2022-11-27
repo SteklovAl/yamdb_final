@@ -12,6 +12,7 @@ services:
       - ./.env
   web:
     container_name: web
+    build: ./
     image: aleksandrsteklov/api_yamdb:latest
     restart: always
     volumes:
